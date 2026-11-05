@@ -1,1 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d16">
 
+  <meta name="google-site-verification" content="wqDVEHvuQ14lzMtLiEWIOLE-gQHNpV_k75GhLLfVGdA">
+  <meta name="monetag" content="69de0ae2199d8d09cd14dbb19b0f01a7">
+
+  <script>(function(s){s.dataset.zone='12196498',s.src='https://nap5k.com'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+  <title>Universal Micro-Unit &amp; Metric Converter - 100% Free Metric Converter</title>
+  <meta name="description" content="Convert centimeters, pixels, milliseconds, inches, bytes and decimal values instantly. Use this free online micro-unit converter for accurate everyday calculations.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d16;
+      --panel: #101827;
+      --panel-2: #141f30;
+      --border: #26374b;
+      --text: #edf5ff;
+      --muted: #94a7bc;
+      --cyan: #06b6d4;
+      --cyan-light: #67e8f9;
+      --success: #4ade80;
+      --danger: #fb7185;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(ellipse at 50% -15%, rgba(6,182,212,.14), transparent 43%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    button, input, select { font: inherit; }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(100% - 30px, 1020px);
+      margin-inline: auto;
+    }
+
+    .topbar {
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid rgba(6,182,212,.4);
+      border-radius: 11px;
+      background: rgba(6,182,212,.1);
+      color: var(--cyan-light);
+      font-size: 19px;
+      box-shadow: 0 0 22px rgba(6,182,212,.09);
+    }
+
+    .brand span:last-child span { color: var(--cyan); }
+
+    .hero {
+      padding: 48px 0 28px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(6,182,212,.3);
+      border-radius: 999px;
+      background: rgba(6,182,212,.07);
+      color: var(--cyan-light);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 20px auto 12px;
+      font-size: clamp(30px, 6vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      font-weight: 850;
+    }
+
+    .cyan-text { color: var(--cyan-light); }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .workspace {
+      padding: 15px 0 35px;
+    }
+
+    .converter-card {
+      padding: clamp(17px, 4vw, 30px);
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      background: linear-gradient(145deg, rgba(20,31,48,.98), rgba(13,21,34,.98));
+      box-shadow: 0 22px 70px rgba(0,0,0,.28), 0 0 28px rgba(6,182,212,.035);
+    }
+
+    .card-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .card-heading h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: -.3px;
+    }
+
+    .live-label {
+      color: var(--cyan-light);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .7px;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #dce9f7;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 13px;
+      border: 1px solid #354960;
+      border-radius: 11px;
+      outline: none;
+      background: #0b1422;
+      color: var(--text);
+      font-size: 14px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(6,182,212,.11);
+    }
+
+    .field input::placeholder { color: #687f98; }
+
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 13px;
+      margin-bottom: 14px;
+    }
+
+    .unit-field { margin-bottom: 17px; }
+
+    .helper {
+      margin: 7px 1px 0;
+      color: #8499b0;
+      font-size: 10px;
+    }
+
+    .convert-btn {
+      display: flex;
+      width: 100%;
+      min-height: 56px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border: 1px solid rgba(103,232,249,.4);
+      border-radius: 12px;
+      background: linear-gradient(100deg, #0891b2, #06b6d4);
+      color: #03151b;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 9px 27px rgba(6,182,212,.15);
+      transition: filter .2s, transform .2s;
+    }
+
+    .convert-btn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    .convert-btn:active { transform: translateY(0); }
+
+    .secondary-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .secondary-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #344960;
+      border-radius: 10px;
+      background: #162338;
+      color: #d8e8f8;
+      font-size: 12px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .secondary-btn:hover { border-color: var(--cyan); }
+
+    .result-panel {
+      display: none;
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .result-panel.visible { display: block; }
+
+    .result-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .result-heading strong { font-size: 13px; }
+
+    .result-badge {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(74,222,128,.1);
+      color: var(--success);
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .result-value {
+      padding: 17px;
+      overflow-wrap: anywhere;
+      border: 1px solid rgba(6,182,212,.35);
+      border-radius: 12px;
+      background: #08121c;
+      color: var(--cyan-light);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: clamp(18px, 4vw, 25px);
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .result-detail {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 9px;
+      margin-top: 11px;
+    }
+
+    .result-actions button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #354960;
+      border-radius: 9px;
+      background: #152338;
+      color: #dcecff;
+      font-size: 12px;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .status {
+      min-height: 21px;
+      margin-top: 9px;
+      color: var(--success);
+      font-size: 11px;
+    }
+
+    .precision-note {
+      margin-top: 17px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--cyan);
+      border-radius: 7px;
+      background: rgba(6,182,212,.055);
+      color: #a8bdcf;
+      font-size: 11px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin: 17px 0 43px;
+    }
+
+    .feature {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--panel);
+    }
+
+    .feature-icon {
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-size: 19px;
+    }
+
+    .feature h3 { margin: 0 0 5px; font-size: 13px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 11px; }
+
+    .content-section {
+      padding: 25px 0;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .section-title {
+      margin: 0 0 11px;
+      font-size: clamp(21px, 4vw, 28px);
+      letter-spacing: -.7px;
+    }
+
+    .content-section > p {
+      color: #a5b5c7;
+      font-size: 13px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 17px;
+    }
+
+    .step {
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+
+    .step-number {
+      display: inline-grid;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      background: rgba(6,182,212,.12);
+      color: var(--cyan-light);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .step h3 { margin: 0 0 5px; font-size: 13px; }
+    .step p { margin: 0; color: var(--muted); font-size: 11px; }
+
+    .directory {
+      margin: 22px 0 43px;
+      padding: 19px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #101a29;
+    }
+
+    .directory-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 13px;
+    }
+
+    .directory-heading h2 { margin: 0; font-size: 16px; }
+    .directory-heading span { color: var(--muted); font-size: 10px; }
+
+    .directory-scroll {
+      max-height: 290px;
+      overflow-y: auto;
+      padding: 3px 7px 3px 0;
+      scrollbar-color: #36556a #111d2c;
+      scrollbar-width: thin;
+    }
+
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 7px;
+    }
+
+    .directory-grid a {
+      display: block;
+      padding: 9px 10px;
+      overflow-wrap: anywhere;
+      border: 1px solid #2a3d53;
+      border-radius: 8px;
+      background: rgba(255,255,255,.02);
+      color: #c5d6e8;
+      font-size: 10px;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .directory-grid a:hover {
+      border-color: var(--cyan);
+      background: rgba(6,182,212,.07);
+      color: var(--cyan-light);
+    }
+
+    .faq-list { margin-top: 13px; }
+
+    details {
+      margin: 8px 0;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel);
+    }
+
+    summary {
+      color: #e5f1fc;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    details p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 23px 0 32px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #788da2;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 22px, 1020px); }
+      .hero { padding-top: 37px; }
+      h1 { letter-spacing: -1px; }
+      .hero-copy { font-size: 12px; }
+      .input-grid, .feature-grid, .steps, .directory-grid {
+        grid-template-columns: 1fr;
+      }
+      .converter-card { border-radius: 16px; }
+      .directory { padding: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="shell">
+      <a class="brand" href="./">
+        <span class="brand-icon">↔</span>
+        <span>MICRO<span>METRIC</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Precision unit conversion workspace</div>
+      <h1 id="page-title">Universal Micro-Unit <span class="cyan-text">&amp; Metric Converter</span></h1>
+      <p class="hero-copy" id="intro-copy">
+        Convert pixels, centimeters, milliseconds, inches, bytes and decimal values
+        with a lightweight browser-based measurement utility. Enter a value, choose
+        a conversion and get an instant result.
+      </p>
+    </section>
+
+    <section class="workspace shell">
+      <div class="converter-card">
+        <div class="card-heading">
+          <h2>▦ Measurement conversion console</h2>
+          <span class="live-label">● INSTANT CALCULATION</span>
+        </div>
+
+        <div class="input-grid">
+          <div class="field">
+            <label class="field-label" for="input-value">Enter Value</label>
+            <input id="input-value" type="number" inputmode="decimal" step="any" placeholder="Example: 120">
+            <p class="helper">Enter a positive or negative numeric value.</p>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="multiplier">Numerical Multiplier</label>
+            <input id="multiplier" type="number" inputmode="decimal" step="any" value="1" placeholder="1">
+            <p class="helper">Optional scale factor. Default: 1.</p>
+          </div>
+        </div>
+
+        <div class="field unit-field">
+          <label class="field-label" for="unit-system">Select Unit System</label>
+          <select id="unit-system">
+            <option value="cm-px">Centimeters → Pixels (96 DPI)</option>
+            <option value="ms-s">Milliseconds → Seconds</option>
+            <option value="in-mm">Inches → Millimeters</option>
+            <option value="px-rem">Pixels → REM (16px base)</option>
+            <option value="bytes-mb">Bytes → Megabytes (decimal)</option>
+            <option value="bytes-mib">Bytes → Mebibytes (binary)</option>
+            <option value="decimal-fraction">Decimal → Fraction</option>
+          </select>
+          <p class="helper" id="unit-description">CSS reference conversion: 1 inch = 96 CSS pixels and 1 inch = 2.54 centimeters.</p>
+        </div>
+
+        <button class="convert-btn" id="convert-btn" type="button">
+          <span>⇄</span> Convert Metrics Instantly
+        </button>
+
+        <div class="secondary-row">
+          <button class="secondary-btn" id="example-btn" type="button">Load Example</button>
+          <button class="secondary-btn" id="clear-btn" type="button">Clear Values</button>
+        </div>
+
+        <div class="result-panel" id="result-panel" aria-live="polite">
+          <div class="result-heading">
+            <strong>Conversion Result</strong>
+            <span class="result-badge">CALCULATED</span>
+          </div>
+          <div class="result-value" id="result-value">—</div>
+          <div class="result-detail" id="result-detail"></div>
+          <div class="result-actions">
+            <button id="copy-result" type="button">Copy Result</button>
+            <button id="download-result" type="button">Download TXT</button>
+          </div>
+          <div class="status" id="status-message"></div>
+        </div>
+
+        <div class="precision-note">
+          <strong>Conversion notes:</strong> Pixel calculations use the CSS standard of
+          96 pixels per inch. REM conversion assumes a 16px root font size. MB uses
+          decimal units (1 MB = 1,000,000 bytes); MiB uses binary units
+          (1 MiB = 1,048,576 bytes).
+        </div>
+
+        <div class="directory">
+          <div class="directory-heading">
+            <h2>Explore measurement conversion tools</h2>
+            <span id="directory-count">60 conversion topics</span>
+          </div>
+          <div class="directory-scroll">
+            <nav class="directory-grid" id="directory-grid" aria-label="Micro-unit converter topics">
+              <a href="?p=cm-to-pixels-converter-for-web-designers">CM to pixels converter for web designers</a>
+              <a href="?p=milliseconds-to-seconds-counter-for-video-editors">Milliseconds to seconds for video editors</a>
+              <a href="?p=inches-to-mm-calculator-for-engineering-students">Inches to mm calculator for engineering students</a>
+              <a href="?p=pixels-to-rem-converter-for-app-developers">Pixels to REM converter for app developers</a>
+              <a href="?p=bytes-to-megabytes-calculator-for-database-admins">Bytes to MB calculator for database admins</a>
+              <a href="?p=decimal-to-fraction-utility-for-excel-spreadsheets">Decimal to fraction utility for Excel spreadsheets</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">⌁</div>
+          <h3>Instant calculations</h3>
+          <p>Convert common micro-units and measurements directly in your browser.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">◎</div>
+          <h3>Flexible multiplier</h3>
+          <p>Scale your input before applying the selected conversion formula.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">▤</div>
+          <h3>Copyable results</h3>
+          <p>Copy the calculated value or download a simple text result.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell">
+      <h2 class="section-title" id="how-title">How to use the micro-unit converter</h2>
+      <p id="how-copy">
+        Enter a number, set the multiplier if needed and select the unit conversion
+        you want. The calculator applies the relevant conversion factor and displays
+        the result with a useful precision level.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">01</span>
+          <h3>Enter your measurement</h3>
+          <p>Type the number you want to convert into the value field.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">02</span>
+          <h3>Choose a conversion</h3>
+          <p>Select the correct unit pair from the conversion dropdown.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">03</span>
+          <h3>Calculate and copy</h3>
+          <p>Press the conversion button and copy or download your result.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell">
+      <h2 class="section-title">Understanding common micro-unit conversions</h2>
+      <p>
+        Small measurement differences can matter in web layouts, application
+        development, print preparation, engineering calculations and data handling.
+        A consistent conversion reference helps reduce manual calculation errors.
+      </p>
+      <p>
+        CSS pixels are reference units rather than a guarantee of physical screen
+        dimensions. A REM value depends on the root font size configured by a website.
+        For data sizes, decimal megabytes and binary mebibytes are different units;
+        select the appropriate option for the specification you are following.
+      </p>
+    </section>
+
+    <section class="content-section shell">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>How many pixels are in one centimeter?</summary>
+          <p>Using the CSS reference of 96 pixels per inch and 2.54 centimeters per inch, one centimeter equals approximately 37.7953 CSS pixels.</p>
+        </details>
+        <details>
+          <summary>How do I convert milliseconds into seconds?</summary>
+          <p>Divide milliseconds by 1,000. For example, 2,500 milliseconds equals 2.5 seconds.</p>
+        </details>
+        <details>
+          <summary>How many millimeters are in one inch?</summary>
+          <p>One international inch equals exactly 25.4 millimeters.</p>
+        </details>
+        <details>
+          <summary>What is the difference between MB and MiB?</summary>
+          <p>A megabyte (MB) is 1,000,000 bytes in decimal notation. A mebibyte (MiB) is 1,048,576 bytes using binary notation.</p>
+        </details>
+        <details>
+          <summary>How does the pixels to REM conversion work?</summary>
+          <p>The calculator divides the pixel value by the assumed root font size of 16 pixels. If your website uses another root font size, the result will differ.</p>
+        </details>
+        <details>
+          <summary>What does the numerical multiplier do?</summary>
+          <p>The multiplier scales the entered value before conversion. For example, an input of 10 with a multiplier of 3 is converted as 30 units.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">MicroMetric · Free browser-based measurement conversion utility</div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const valueInput = document.getElementById("input-value");
+      const multiplierInput = document.getElementById("multiplier");
+      const unitSelect = document.getElementById("unit-system");
+      const resultPanel = document.getElementById("result-panel");
+      const resultValue = document.getElementById("result-value");
+      const resultDetail = document.getElementById("result-detail");
+      const status = document.getElementById("status-message");
+      const unitDescription = document.getElementById("unit-description");
+
+      const conversionInfo = {
+        "cm-px": {
+          label: "Centimeters to CSS pixels",
+          from: "cm",
+          to: "px",
+          description: "Uses the CSS reference standard: 1 inch = 96 CSS pixels and 1 inch = 2.54 centimeters."
+        },
+        "ms-s": {
+          label: "Milliseconds to seconds",
+          from: "ms",
+          to: "seconds",
+          description: "Divides milliseconds by 1,000 to calculate seconds."
+        },
+        "in-mm": {
+          label: "Inches to millimeters",
+          from: "in",
+          to: "mm",
+          description: "Uses the exact international conversion: 1 inch = 25.4 millimeters."
+        },
+        "px-rem": {
+          label: "Pixels to REM",
+          from: "px",
+          to: "rem",
+          description: "Assumes a root font size of 16 CSS pixels. Result = pixels ÷ 16."
+        },
+        "bytes-mb": {
+          label: "Bytes to megabytes",
+          from: "bytes",
+          to: "MB",
+          description: "Uses decimal storage units: 1 MB = 1,000,000 bytes."
+        },
+        "bytes-mib": {
+          label: "Bytes to mebibytes",
+          from: "bytes",
+          to: "MiB",
+          description: "Uses binary storage units: 1 MiB = 1,048,576 bytes."
+        },
+        "decimal-fraction": {
+          label: "Decimal to fraction",
+          from: "decimal",
+          to: "fraction",
+          description: "Approximates a decimal number as a simplified fraction."
+        }
+      };
+
+      function gcd(a, b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+        while (b) {
+          const remainder = a % b;
+          a = b;
+          b = remainder;
+        }
+        return a || 1;
+      }
+
+      function decimalToFraction(value) {
+        if (!Number.isFinite(value)) {
+          throw new Error("Enter a valid decimal number.");
+        }
+
+        if (value === 0) return "0";
+
+        const sign = value < 0 ? "-" : "";
+        const target = Math.abs(value);
+
+        if (Number.isInteger(target)) return sign + target + "/1";
+
+        // Continued-fraction approximation, capped at a denominator of 1,000,000.
+        const maxDenominator = 1000000;
+        let x = target;
+        let h1 = 1, h0 = 0;
+        let k1 = 0, k0 = 1;
+        let bestNumerator = Math.round(target);
+        let bestDenominator = 1;
+
+        for (let i = 0; i < 64; i++) {
+          const a = Math.floor(x);
+          const h2 = a * h1 + h0;
+          const k2 = a * k1 + k0;
+
+          if (k2 > maxDenominator || !Number.isSafeInteger(h2)) {
+            break;
+          }
+
+          bestNumerator = h2;
+          bestDenominator = k2;
+
+          const remainder = x - a;
+          if (remainder < 1e-14) break;
+
+          h0 = h1;
+          h1 = h2;
+          k0 = k1;
+          k1 = k2;
+          x = 1 / remainder;
+        }
+
+        const divisor = gcd(bestNumerator, bestDenominator);
+        return sign + (bestNumerator / divisor) + "/" + (bestDenominator / divisor);
+      }
+
+      function formatNumber(number) {
+        if (!Number.isFinite(number)) return "Out of numeric range";
+        if (Object.is(number, -0)) number = 0;
+
+        return new Intl.NumberFormat("en-US", {
+          maximumSignificantDigits: 12,
+          useGrouping: true
+        }).format(number);
+      }
+
+      function calculate() {
+        const rawValue = valueInput.value.trim();
+        const rawMultiplier = multiplierInput.value.trim();
+
+        if (rawValue === "") {
+          showError("Enter a value before converting.");
+          return;
+        }
+
+        if (rawMultiplier === "") {
+          showError("Enter a multiplier. Use 1 for a standard conversion.");
+          return;
+        }
+
+        const value = Number(rawValue);
+        const multiplier = Number(rawMultiplier);
+
+        if (!Number.isFinite(value)) {
+          showError("Enter a valid numeric value.");
+          return;
+        }
+
+        if (!Number.isFinite(multiplier)) {
+          showError("Enter a valid numerical multiplier.");
+          return;
+        }
+
+        const scaledValue = value * multiplier;
+
+        if (!Number.isFinite(scaledValue)) {
+          showError("The scaled value is outside the supported numeric range.");
+          return;
+        }
+
+        const selected = unitSelect.value;
+        const info = conversionInfo[selected];
+
+        let converted;
+        let formatted;
+
+        switch (selected) {
+          case "cm-px":
+            converted = scaledValue * (96 / 2.54);
+            formatted = formatNumber(converted) + " px";
+            break;
+
+          case "ms-s":
+            converted = scaledValue / 1000;
+            formatted = formatNumber(converted) + " seconds";
+            break;
+
+          case "in-mm":
+            converted = scaledValue * 25.4;
+            formatted = formatNumber(converted) + " mm";
+            break;
+
+          case "px-rem":
+            converted = scaledValue / 16;
+            formatted = formatNumber(converted) + " rem";
+            break;
+
+          case "bytes-mb":
+            converted = scaledValue / 1000000;
+            formatted = formatNumber(converted) + " MB";
+            break;
+
+          case "bytes-mib":
+            converted = scaledValue / 1048576;
+            formatted = formatNumber(converted) + " MiB";
+            break;
+
+          case "decimal-fraction":
+            formatted = decimalToFraction(scaledValue);
+            break;
+
+          default:
+            showError("Select a supported unit conversion.");
+            return;
+        }
+
+        resultValue.textContent = formatted;
+        resultDetail.textContent =
+          formatNumber(value) + " " + info.from +
+          " × " + formatNumber(multiplier) +
+          " = " + formatNumber(scaledValue) + " " + info.from +
+          (selected === "decimal-fraction" ? " · Simplified fraction" : " · " + info.label);
+
+        resultPanel.classList.add("visible");
+        status.textContent = "✓ Conversion completed successfully.";
+      }
+
+      function showError(message) {
+        resultPanel.classList.add("visible");
+        resultValue.textContent = "Unable to convert";
+        resultDetail.textContent = "";
+        status.textContent = message;
+        status.style.color = "#fb7185";
+      }
+
+      function updateUnitDescription() {
+        const info = conversionInfo[unitSelect.value];
+        unitDescription.textContent = info ? info.description : "";
+      }
+
+      async function copyResult() {
+        const value = resultValue.textContent;
+
+        if (!value || value === "Unable to convert") {
+          status.textContent = "Generate a valid result before copying.";
+          return;
+        }
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const temporary = document.createElement("textarea");
+            temporary.value = value;
+            temporary.setAttribute("readonly", "");
+            temporary.style.position = "fixed";
+            temporary.style.opacity = "0";
+            document.body.appendChild(temporary);
+            temporary.select();
+
+            const copied = document.execCommand("copy");
+            temporary.remove();
+
+            if (!copied) throw new Error("Clipboard unavailable");
+          }
+
+          status.style.color = "#4ade80";
+          status.textContent = "✓ Result copied to clipboard.";
+        } catch (error) {
+          status.style.color = "#fb7185";
+          status.textContent = "Clipboard access was blocked. Select the result and copy it manually.";
+        }
+      }
+
+      function downloadResult() {
+        const value = resultValue.textContent;
+
+        if (!value || value === "Unable to convert") {
+          status.textContent = "Generate a valid result before downloading.";
+          return;
+        }
+
+        const content = [
+          "MicroMetric Conversion Result",
+          "-----------------------------",
+          resultDetail.textContent,
+          "Result: " + value
+        ].join("\n");
+
+        const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+
+        anchor.href = url;
+        anchor.download = "micrometric-conversion.txt";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+
+        URL.revokeObjectURL(url);
+        status.style.color = "#4ade80";
+        status.textContent = "✓ Text file download started.";
+      }
+
+      document.getElementById("convert-btn").addEventListener("click", calculate);
+      document.getElementById("copy-result").addEventListener("click", copyResult);
+      document.getElementById("download-result").addEventListener("click", downloadResult);
+      unitSelect.addEventListener("change", updateUnitDescription);
+
+      document.getElementById("example-btn").addEventListener("click", function () {
+        const examples = {
+          "cm-px": "10",
+          "ms-s": "2500",
+          "in-mm": "2",
+          "px-rem": "24",
+          "bytes-mb": "5000000",
+          "bytes-mib": "1048576",
+          "decimal-fraction": "0.75"
+        };
+
+        valueInput.value = examples[unitSelect.value] || "10";
+        multiplierInput.value = "1";
+        calculate();
+      });
+
+      document.getElementById("clear-btn").addEventListener("click", function () {
+        valueInput.value = "";
+        multiplierInput.value = "1";
+        resultPanel.classList.remove("visible");
+        resultValue.textContent = "";
+        resultDetail.textContent = "";
+        status.textContent = "";
+        status.style.color = "#4ade80";
+        valueInput.focus();
+      });
+
+      [valueInput, multiplierInput].forEach(function (field) {
+        field.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") calculate();
+        });
+      });
+
+      const phrases = [
+        "cm-to-pixels-converter-for",
+        "milliseconds-to-seconds-counter-for",
+        "inches-to-mm-calculator-for",
+        "pixels-to-rem-converter-for",
+        "bytes-to-megabytes-calculator-for",
+        "decimal-to-fraction-utility-for"
+      ];
+
+      const targets = [
+        "web-designers",
+        "app-developers",
+        "engineering-students",
+        "graphic-layouts",
+        "video-editors",
+        "database-admins",
+        "excel-spreadsheets",
+        "print-dimensions",
+        "coding-math",
+        "project-planners"
+      ];
+
+      const phraseLabels = {
+        "cm-to-pixels-converter-for": "CM to Pixels Converter",
+        "milliseconds-to-seconds-counter-for": "Milliseconds to Seconds Converter",
+        "inches-to-mm-calculator-for": "Inches to MM Calculator",
+        "pixels-to-rem-converter-for": "Pixels to REM Converter",
+        "bytes-to-megabytes-calculator-for": "Bytes to Megabytes Calculator",
+        "decimal-to-fraction-utility-for": "Decimal to Fraction Utility"
+      };
+
+      const targetLabels = {
+        "web-designers": "Web Designers",
+        "app-developers": "App Developers",
+        "engineering-students": "Engineering Students",
+        "graphic-layouts": "Graphic Layouts",
+        "video-editors": "Video Editors",
+        "database-admins": "Database Administrators",
+        "excel-spreadsheets": "Excel Spreadsheets",
+        "print-dimensions": "Print Dimensions",
+        "coding-math": "Coding and Math",
+        "project-planners": "Project Planners"
+      };
+
+      function titleCase(slug) {
+        return slug.split("-").map(function (word) {
+          if (word === "mm") return "MM";
+          if (word === "rem") return "REM";
+          if (word === "cm") return "CM";
+          if (word === "to") return "to";
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(" ");
+      }
+
+      function initializeProgrammaticPage() {
+        const params = new URLSearchParams(window.location.search);
+        const requested = (params.get("p") || "").toLowerCase().trim();
+        const validSlug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(requested) ? requested : "";
+
+        const title = document.getElementById("page-title");
+        const intro = document.getElementById("intro-copy");
+        const howTitle = document.getElementById("how-title");
+        const howCopy = document.getElementById("how-copy");
+        const description = document.querySelector('meta[name="description"]');
+
+        if (!validSlug) {
+          document.title = "Universal Micro-Unit & Metric Converter - 100% Free Metric Converter";
+          title.textContent = "Universal Micro-Unit & Metric Converter";
+          intro.textContent = "Convert pixels, centimeters, milliseconds, inches, bytes and decimal values with a lightweight browser-based measurement utility. Enter a value, choose a conversion and get an instant result.";
+          howTitle.textContent = "How to use the micro-unit converter";
+          howCopy.textContent = "Enter a number, set the multiplier if needed and select the unit conversion you want. The calculator applies the relevant conversion factor and displays the result with a useful precision level.";
+          description.content = "Convert centimeters, pixels, milliseconds, inches, bytes and decimal values instantly. Use this free online micro-unit converter for accurate everyday calculations.";
+          return;
+        }
+
+        let matchedPhrase = "";
+        let matchedTarget = "";
+
+        for (let i = 0; i < phrases.length; i++) {
+          for (let j = 0; j < targets.length; j++) {
+            if (validSlug === phrases[i] + targets[j]) {
+              matchedPhrase = phrases[i];
+              matchedTarget = targets[j];
+              break;
+            }
+          }
+          if (matchedPhrase) break;
+        }
+
+        const extracted = titleCase(validSlug);
+        const phraseName = matchedPhrase
+          ? phraseLabels[matchedPhrase]
+          : "Micro-Unit Conversion Tool";
+        const targetName = matchedTarget
+          ? targetLabels[matchedTarget]
+          : extracted;
+
+        document.title = extracted.toUpperCase() + " - 100% Free Metric Converter";
+        title.textContent = phraseName + " for " + targetName;
+
+        intro.textContent = "Use this free " + phraseName.toLowerCase() +
+          " for " + targetName + ". Enter your measurement, apply an optional multiplier and select the matching conversion. Get a clear result instantly with the relevant unit reference.";
+
+        howTitle.textContent = "How to use the " + phraseName + " for " + targetName;
+        howCopy.textContent = "This measurement utility helps " + targetName +
+          " convert values with a consistent formula. Enter your number, select the appropriate unit conversion and review the calculated result before copying it.";
+
+        description.content = "Free " + phraseName.toLowerCase() + " for " +
+          targetName + ". Convert measurements instantly with a simple multiplier, accurate unit formulas and copy-ready results.";
+      }
+
+      function buildDirectory() {
+        const grid = document.getElementById("directory-grid");
+        const fragment = document.createDocumentFragment();
+        let count = 0;
+
+        phrases.forEach(function (phrase) {
+          targets.forEach(function (target) {
+            const slug = phrase + target;
+            const link = document.createElement("a");
+
+            link.setAttribute("href", "?p=" + slug);
+            link.textContent = phraseLabels[phrase] + " for " + targetLabels[target];
+
+            fragment.appendChild(link);
+            count++;
+          });
+        });
+
+        grid.replaceChildren(fragment);
+        document.getElementById("directory-count").textContent =
+          count + " conversion topics";
+      }
+
+      window.onload = function () {
+        initializeProgrammaticPage();
+        buildDirectory();
+        updateUnitDescription();
+      };
+    })();
+  </script>
+</body>
+</html>
